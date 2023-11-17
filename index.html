@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="shortcut icon" href="calculator.jpeg">
+    <style>
+        .button1 {
+            height: 50px;
+        }
+        #screen{
+            height: 70px;
+            width: 300px;
+            color: orange;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: darkslategrey;
+            filter: drop-shadow(5px 5px 5px orange);
+            font-size: xx-large;
+            font-weight: bolder;
+        }
+        .button2{
+            font-weight: bolder;
+            width: 70px;
+            height: 50px;
+            color: orange;
+            font-size: xx-large;
+        }
+        .button{
+            width: 70px;
+            height: 50px;
+            font-weight: bolder;
+            font-size: xx-large;
+        }
+        .button1{
+            width: 70px;
+            height: 108px;
+            font-weight: bolder;
+            font-size: xx-large;
+            color: orange;
+        }
+        .button:hover{
+            background-color: darkslategrey;
+        }
+        .button1:hover{
+            background-color: darkslategrey;
+        }
+        .button2:hover{
+            background-color: darkslategrey;
+        }
+        table{
+            border: 10px solid black;
+            box-sizing: border-box;
+        }
+        #calc{
+            border: 10px solid black;
+        }
+        h2{
+            color: orange;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        h2:hover{
+            font-size: xx-large;
+            transition: 1.5s;
+        }
+
+    </style>
+
+</head>
+
+<body bgcolor="grey">
+    <center>
+        <h2>
+            <u>
+                <b>
+                    By Ahmed
+                </b>
+            </u>
+        </h2>
+        <div>
+        <table id="calc">
+            <tr>
+                    <input type="text" id="screen" placeholder="Enter Value">
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    <button class="button2" onclick='AC()'>AC</button>
+                </td>
+                <td>
+                    <button class="button2" onclick='divide("/")'>/</button>
+                </td>
+                <td>
+                    <button class="button2" onclick='multiply("*")'>*</button>
+                </td>
+                <td>
+                    <button class="button" onclick='backspace("")'> &#10060;</button>
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    <button class="button" onclick='seven("7")'>7</button>
+                </td>
+                <td>
+                    <button class="button" onclick='eight("8")'>8</button>
+                </td>
+                <td>
+                    <button class="button" onclick='nine("9")'>9</button>
+                </td>
+                <td>
+                    <button class="button2" onclick='minus("-")'>-</button>
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    <button class="button" onclick='four("4")'>4</button>
+                </td>
+                <td>
+                    <button class="button" onclick='five("5")'>5</button>
+                </td>
+                <td>
+                    <button class="button" onclick='six("6")'>6</button>
+                </td>
+                <td>
+                    <button class="button2" onclick='plus("+")'>+</button>
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    <button class="button" onclick='one("1")'>1</button>
+                </td>
+                <td>
+                    <button class="button" onclick='two("2")'>2</button>
+                </td>
+                <td>
+                    <button class="button" onclick='three("3")'>3</button>
+                </td>
+                <td rowspan="2">
+                    <button class="button1" onclick='equal("=")'>=</button>
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td>
+                    <button class="button" onclick='percent("%")'>%</button>
+                </td>
+                <td>
+                    <button class="button" onclick='zero("0")'>0</button>
+                </td>
+                <td>
+                    <button class="button" onclick='dot(".")'>.</button>
+                </td>
+            </tr>
+
+        </table>
+        </div>
+    </center>
+    <script>
+        var name_text = document.getElementById('screen');
+        function equal() {
+            name_text.value = eval(name_text.value)
+        }
+        function AC() {
+            name_text.value = "";
+        }
+        function divide() {
+            name_text.value += "/";
+        }
+        function multiply() {
+            name_text.value += "*";
+        }
+        function seven() {
+            name_text.value += 7;
+        }
+        function eight() {
+            name_text.value += 8;
+        }
+        function nine() {
+            name_text.value += 9;
+        }
+        function plus(){
+            name_text.value += "+";
+        }
+        function four() {
+            name_text.value += 4;
+        }
+        function five() {
+            name_text.value += 5;
+        }
+        function six() {
+            name_text.value += 6;
+        }
+        function minus(){
+            name_text.value += "-";
+        }
+        function one() {
+            name_text.value += 1;
+        }
+        function two() {
+            name_text.value += 2;
+        }
+        function three() {
+            name_text.value += 3;
+        }
+        function percent() {
+            name_text.value += "%";
+        }
+        function zero() {
+            name_text.value += 0;
+        }
+        function dot() {
+            name_text.value += ".";
+        }
+        function backspace() {
+            name_textvalue = document.getElementById('screen').value;
+            name_text.value = name_textvalue.substring(0, name_textvalue.length - 1);
+        }
+    </script>
+</body>
+
+</html>
